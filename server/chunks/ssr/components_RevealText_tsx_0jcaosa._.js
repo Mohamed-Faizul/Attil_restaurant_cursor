@@ -1,0 +1,3 @@
+module.exports=[60105,a=>{"use strict";var b=a.i(87924),c=a.i(46271),d=a.i(61362);a.s(["default",0,function({text:a,className:e="",as:f="h2",delay:g=0}){let h=a.split(" ");return(0,b.jsx)(f,{className:e,children:(0,b.jsx)(c.motion.span,{className:"flex flex-wrap justify-inherit gap-x-[0.35em]",variants:d.staggerContainer,initial:"hidden",whileInView:"visible",viewport:{once:!0,margin:"-10%"},style:{perspective:800},children:h.map((a,e)=>(0,b.jsx)("span",{className:"inline-block overflow-hidden",children:(0,b.jsx)(c.motion.span,{className:"inline-block",variants:d.wordReveal,transition:{delay:g+.04*e},children:a})},`${a}-${e}`))})})}])}];
+
+//# sourceMappingURL=components_RevealText_tsx_0jcaosa._.js.map
