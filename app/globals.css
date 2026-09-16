@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #1a1a2e;
+  --midnight: #16213e;
+  --deep: #0f3460;
+  --rose: #e94560;
+  --gold: #d4af37;
+  --cream: #f5f5f5;
+  --purple: #6b5b95;
+  --teal: #48a9a6;
+}
+
+@theme inline {
+  --color-navy: var(--navy);
+  --color-midnight: var(--midnight);
+  --color-deep: var(--deep);
+  --color-rose: var(--rose);
+  --color-gold: var(--gold);
+  --color-cream: var(--cream);
+  --color-purple: var(--purple);
+  --color-teal: var(--teal);
+  --font-sans: var(--font-outfit);
+  --font-serif: var(--font-cormorant);
+  --font-script: var(--font-great-vibes);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  color: var(--cream);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(107, 91, 149, 0.35), transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, rgba(15, 52, 96, 0.85), transparent 50%),
+    linear-gradient(165deg, #1a1a2e 0%, #16213e 48%, #0f3460 100%);
+  font-family: var(--font-outfit), system-ui, sans-serif;
+}
+
+body.has-custom-cursor,
+body.has-custom-cursor a,
+body.has-custom-cursor button {
+  cursor: none;
+}
+
+::selection {
+  background: rgba(212, 175, 55, 0.35);
+  color: #fff;
+}
+
+.gradient-text {
+  background: linear-gradient(120deg, #d4af37 0%, #e94560 40%, #48a9a6 75%, #d4af37 100%);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: sheen 8s ease-in-out infinite;
+}
+
+@keyframes sheen {
+  0%,
+  100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+}
+
+@keyframes ken {
+  0% {
+    transform: scale(1.08) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.18) translate3d(-2%, 1%, 0);
+  }
+  100% {
+    transform: scale(1.08) translate3d(0, 0, 0);
+  }
+}
+
+.ken-burns {
+  animation: ken 18s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(212, 175, 55, 0);
+  }
+}
+
+.icon-pulse {
+  animation: pulse-glow 2.8s ease-in-out infinite;
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: translateX(0) scale(1.08);
+  }
+  50% {
+    transform: translateX(5px) scale(1.08);
+  }
+}
+
+.food-hover:hover img {
+  animation: sway 1.6s ease-in-out infinite;
+}
+
+.noise {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.35), 0 0 24px rgba(233, 69, 96, 0.25);
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+.shake {
+  animation: shake 0.45s ease-in-out;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-6px);
+  }
+  75% {
+    transform: translateX(6px);
+  }
+}
+
+.swiper-pagination-bullet {
+  background: #d4af37 !important;
+  opacity: 0.4;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+}
